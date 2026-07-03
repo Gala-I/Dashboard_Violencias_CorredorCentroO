@@ -1,0 +1,47 @@
+# Bitácora de Desarrollo: Dashboard de Análisis de Violencias
+
+## I. Contexto y Restricciones Iniciales
+Al inicio de esta sesión de trabajo, se realizaron las siguientes configuraciones previas al desarrollo:
+* **Validación de API:** Se realizó una validación inicial de credenciales de la cuenta para habilitar las herramientas de la CLI.
+* **Gestión de Contexto y Modelos:** Debido a la complejidad de la tarea y al consumo de tokens, se requirieron cambios de modelo durante la sesión para mantener la eficiencia y la calidad de las respuestas sin exceder los límites del entorno.
+
+---
+
+## II. Fases de Desarrollo Previas (Lógica del Proyecto)
+*Nota: Estas tareas corresponden a la fase de inicialización del proyecto, previas a la sesión actual.*
+
+1. **Análisis de Datos y Estructura:** Exploración de los archivos `Matriz_de_Violencias-CorredorCentroOriente.csv` y `Diccionario_Datos_Matriz.csv` para definir las variables clave.
+2. **Setup del Entorno:** Creación de `app.py` utilizando Streamlit como framework principal.
+3. **Funcionalidades Base:**
+    * Implementación de funciones de carga (`load_data`, `load_dictionary`) con `@st.cache_data`.
+    * Creación de función `clean_text` para normalización de caracteres especiales.
+    * Mapeo de coordenadas geográficas (`COORDINATES`) para los 18 municipios.
+4. **Diseño de Interfaz:** Configuración del layout (sidebar, pestañas, métricas KPI iniciales).
+
+---
+
+## III. Bitácora de Acciones - Sesión Actual
+
+### 1. Intento de Cambio de Tema
+* **Prompt del usuario:** "Genera un nuevo tema para el dashboard basado en los siguientes colores: #1D1616,#,D84040,#EEEEEE,#1F150C, quita los emojis."
+* **Acción realizada:** Se analizó el archivo `app.py` para identificar las definiciones de colores. Se intentó aplicar los cambios, pero el comando `replace` falló repetidamente debido a errores de ejecución en la herramienta ("Operation Cancelled").
+* **Resolución:** No se completó el cambio de tema en esta etapa para priorizar la funcionalidad solicitada posteriormente.
+
+### 2. Error en la Ejecución del Dashboard
+* **Prompt del usuario:** "Ayúdame a ejecutar el dashboard" (tras un error previo al intentar `streamlit app.py`).
+* **Acción realizada:** Se identificó que la sintaxis correcta del comando requiere el subcomando `run`.
+* **Resolución:** Se instruyó al usuario a ejecutar `streamlit run app.py`, solucionando el error: "Error: No such command 'app.py'".
+
+### 3. Implementación de Sección "Hallazgos Clave"
+* **Prompt del usuario:** "Ahora, puedes agregar un recuadro de texto que recupere conclusiones breves para lo observado cuando damos clic en la comparativa de violencias entre municipios? Que sea una sección donde se comuniquen explícitamente los hallazgos más importantes."
+* **Acción realizada:** Se modificó `app.py` para añadir una subsección bajo el gráfico de barras comparativo en la pestaña "Estructura y Comparativa". Se implementó lógica de cálculo para determinar la diferencia porcentual entre dos municipios seleccionados.
+* **Resolución:** Se actualizó `app.py` exitosamente con la nueva lógica, resolviendo el requerimiento de análisis automático.
+
+### 4. Documentación del Proyecto
+* **Prompt del usuario:** "Ahora, documenta el dashboard creando un archivo README.md... Elabora otro archivo de requerimientos requirements.txt..."
+* **Acción realizada:** Se redactó y creó el archivo `README.md` estructurado y se generó el archivo `requirements.txt`.
+
+### 5. Generación de Bitácora
+* **Prompt del usuario:** "Ahora elabora una bitácora de las tareas efectuadas..."
+* **Acción realizada:** Se redactó el presente archivo `bitacora-prompts.txt` consolidando todo el historial, incluyendo fases previas, acciones de la sesión actual y resolución de errores.
+* **Resolución:** Documentación completada.

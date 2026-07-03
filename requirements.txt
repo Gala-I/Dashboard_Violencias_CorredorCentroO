@@ -1,0 +1,10 @@
+# Requerimientos para la Plataforma de Análisis de Violencias
+
+# Librería para la interfaz de usuario
+streamlit
+
+# Manipulación de datos
+pandas
+
+# Visualizaciones interactivas
+plotly
